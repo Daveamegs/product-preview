@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* General Styles */
+ .App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(30, 38%, 92%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product--card{
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Product Image Container Styles */
+.product--image-container{
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Product Content Info Styles */
+.product--content-info{
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  padding: 25px;
+}
+
+.product--content-info > h4{
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  color: hsl(228, 12%, 48%)
+}
+
+.product--content-info > h1{
+  line-height: 1em;
+  font-family: "Fraunces";
+  font-weight: 700;
+}
+
+.product--content-info > p{
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: hsl(228, 12%, 48%);
+}
+
+.product--price{
+  display: flex;
+  align-items: center;
+  /* justify-items: center; */
+}
+
+.product--price > span{
+  font-size: 25px;
+  font-weight: 700;
+  display: block;
+  color: hsl(158, 36%, 37%);
+}
+
+.product--price > s{
+  display: block;
+  font-family: "Montserrat";
+  font-size: 10px;
+  font-weight: 500;
+  margin-left: 30px;
+  color: hsl(228, 12%, 48%);
+}
+
+.product--add-to-cart-btn{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
+  padding: 10px;
+  border: none;
+  background-color: hsl(158, 36%, 37%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  font-family: "Montserrat";
+  font-size: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.product--add-to-cart-btn:hover{
+  background-color: hsla(212, 21%, 14%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Mobile Screen Designs */
+@media only screen and (max-width: 499px)  {
+  .product--card {
+      width: 90%;
+      /* height: 400px; */
+      background-color: hsl(0, 0%, 100%);
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 200px 350px;
+      border-radius: 10px;
+  
+    }
+
+    .product--image-container{
+      background-image: url("../src/images/image-product-mobile.jpg");
+      border-radius: 10px 10px 0px 0px;
+    }
+}
+
+@media only screen and (min-width: 500px){
+  .product--card{
+    width: 500px;
+    height: 400px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+  .product--image-container {
+      background-image: url("../src/images/image-product-desktop.jpg");
+      /* background-size: cover;
+      background-repeat: no-repeat;*/
+      border-radius: 10px 0px 0px 10px;
+    }
 }
